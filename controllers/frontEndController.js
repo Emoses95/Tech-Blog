@@ -6,14 +6,18 @@ router.get("/", (req, res) => {
     Comment.findAll({
         include: [User]
     }).then(commentData => {
-        console.log(commentData)
-        const hbsComments = commentData.map(comment => comment.toJSON())
-        console.log(commentData)
+        console.log(commentData);
+        const hbsComments = commentData.map(comment => comment.toJSON());
+        console.log(commentData);
         res.render("home", {
             allComments: hbsComments
-        })
-    })
-})
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send("Error retrieving comments");
+    });
+});
+
 
 router.get("/login", (req, res) => {
     res.render("login")

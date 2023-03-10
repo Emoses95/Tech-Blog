@@ -1,7 +1,7 @@
 document.querySelector("#new-comment-form").addEventListener("submit", e => {
     e.preventDefault();
     const commentObj = {
-        blog: document.querySelector("#comment-input").value
+        comment: document.querySelector("#comment-input").value
     }
     console.log(commentObj)
     fetch("/api/comment", {
