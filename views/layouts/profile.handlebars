@@ -1,14 +1,20 @@
 <h1>Welcome back, {{email}}!</h1>
-<h2>Add a blog</h2>
-<form id="new-blog-form">
-    <textarea id="blog-input"></textarea>
+<br>
+<h2>Add a Comment</h2>
+<br>
+
+<form id="new-comment-form">
+    <textarea id="comment-input"></textarea>
     <button>blog</button>
 </form>
-<h2>my blog</h2>
-{{#each Blogs}}
-    <section class="blog-box">
-    <p>  text: {{blog}}</p>
+<br>
+
+<h2>My Comments:</h2>
+{{#each Comments}}
+    <section class="comment-box">
+    <p>  text: {{comment}}</p>
 </section>
+<br>
 {{/each}}
 
 <script src="/js/profile.js"></script>

@@ -1,12 +1,12 @@
 const User = require("./User");
-const TechBlog = require("./Comment");
+const Comment = require("./Comment");
 
-TechBlog.belongsTo(User, {
+Comment.belongsTo(User, {
     onDelete: "CASCADE"
 })
-User.hasMany(TechBlog)
+User.hasMany(Comment)
 
 module.exports = {
     User,
-    TechBlog
+    Comment
 }
