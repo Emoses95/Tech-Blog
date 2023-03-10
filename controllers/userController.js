@@ -34,11 +34,11 @@ router.get("/:id", (req, res) => {
 // Create user
 router.post("/", (req, res) => {
     User.create({
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password
     }).then(userData => {
         req.session.userId = userData.id;
-        req.session.userEmail = userData.email;
+        req.session.username = userData.username;
         res.json(userData)
     }).catch(err => {
         console.log(err);
@@ -50,15 +50,15 @@ router.post("/", (req, res) => {
 router.post("/login", (req, res) => {
     User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
     }).then(userData => {
         if (!userData) {
-            return res.status(401).json({ msg: "incorrect email or password" })
+            return res.status(401).json({ msg: "incorrect username or password" })
         } else {
             if (bcrypt.compareSync(req.body.password, userData.password)) {
                 req.session.userId = userData.id;
-                req.session.userEmail = userData.email;
+                req.session.username = userData.username;
                 return res.json(userData)
             } else {
                 return res.status(401).json({ msg: "incorrect email or password" })

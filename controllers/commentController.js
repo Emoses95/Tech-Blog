@@ -1,6 +1,6 @@
 const express = require('require');
 const router = express.Router();
-const { User, Coment } = require('../models');
+const { User, Comment } = require('../models');
 
 // Get all comments
 router.get('/', (req, res) => {
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
         UserId: req.body.UserId,
     }).then((commentData) => {
         res.json(commentData)
-    }).catch((err) = {
+    }).catch((err) => {
         console.log(err)
         res.status(500).json({ msg: 'Error creating comment', err })
     });

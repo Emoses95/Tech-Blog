@@ -1,37 +1,37 @@
 const sequelize = require("../config/connection")
-const {User,TechBlog} = require("../models")
+const { User, TechBlog } = require("../models")
 
-const seed = async ()=>{
-    await sequelize.sync({force:true});
+const seed = async () => {
+    await sequelize.sync({ force: true });
     const users = await User.bulkCreate([
         {
-            email:"tech@gmail.com",
-            password:"password"
+            username: "techg",
+            password: "password"
         },
         {
-            email:"blog@gamil.com",
-            password:"ppassword"
+            username: "blogga",
+            password: "ppassword"
         },
         {
-            email:"techblog@gmail.com",
-            password:"pppassword"
+            username: "techblog",
+            password: "pppassword"
         }
-    ],{
-        individualHooks:true
+    ], {
+        individualHooks: true
     })
-const techBlog= techBlog
+    const techBlog = techBlog
     const techs = await TechBlog.bulkCreate([
         {
-            techBlog:"Why is MVC so important?",
-            UserId:1
+            techBlog: "Why is MVC so important?",
+            UserId: 1
         },
         {
-            techBlog:"Authentication vs Authentication",
-            UserId:3
+            techBlog: "Authentication vs Authentication",
+            UserId: 3
         },
         {
-            chirp:"Object-relational mapping",
-            UserId:3
+            chirp: "Object-relational mapping",
+            UserId: 3
         },
     ])
     process.exit(1)
