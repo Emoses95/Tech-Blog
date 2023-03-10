@@ -1,43 +1,44 @@
 const express = require('express');
 const router = express.Router();
-const {TechBlog,User} = require('../models');
+const { User, Comment } = require('../models');
 
-router.get("/",(req,res)=>{
-    TechBlog.findAll({
-        include:[User]
-    }).then(techData=>{
-        console.log(techData)
-        const hbsTech = techData.map(tech=>tech.toJSON())
-        console.log('==============================')
-        console.log(hbsTech)
-        res.render("home",{
-            allTech:hbsTech
+router.get("/", (req, res) => {
+    Comment.findAll({
+        include: [User]
+    }).then(commentData => {
+        console.log(commentData)
+        const hbsComments = techComments.map(comment => comment.toJSON())
+        console.log(commentData)
+        res.render("home", {
+            allComments: hbsComments
         })
     })
 })
 
-router.get("/login",(req,res)=>{
+router.get("/login", (req, res) => {
     res.render("login")
 })
 
-router.get("/signup",(req,res)=>{
+router.get("/signup", (req, res) => {
     res.render("signup")
 })
 
-router.get("/profile",(req,res)=>{
-    if(!req.session.userId){
+router.get('/logout', (req, res) => {
+    res.render('login', { logout: true })
+})
+
+router.get("/profile", (req, res) => {
+    if (!req.session.userId) {
         return res.redirect("/login")
     }
-    User.findByPk(req.session.userId,{
-        include:[TechBlog]
-    }).then(userdata=>{
-        console.log(userdata)
+    User.findByPk(req.session.userId, {
+        include: [Comment]
+    }).then(userdata => {
         const hbsData = userdata.toJSON();
-        console.log('==============================')
         console.log(hbsData)
-        res.render("profile",hbsData)
+        res.render("profile", hbsData)
     })
-    res.redirect("/sessions")
+
 })
 
 module.exports = router;
