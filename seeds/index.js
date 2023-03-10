@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection")
-const { User, TechBlog } = require("../models")
+const { User, Comment } = require("../models")
 
 const seed = async () => {
     await sequelize.sync({ force: true });
@@ -19,8 +19,8 @@ const seed = async () => {
     ], {
         individualHooks: true
     })
-    const techBlog = techBlog
-    const techs = await TechBlog.bulkCreate([
+
+    const techs = await Comment.bulkCreate([
         {
             techBlog: "Why is MVC so important?",
             UserId: 1
