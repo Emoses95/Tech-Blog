@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
         include: [User]
     }).then(commentData => {
         console.log(commentData)
-        const hbsComments = techComments.map(comment => comment.toJSON())
+        const hbsComments = commentData.map(comment => comment.toJSON())
         console.log(commentData)
         res.render("home", {
             allComments: hbsComments
