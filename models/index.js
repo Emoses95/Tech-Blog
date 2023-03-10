@@ -1,8 +1,8 @@
-const User= require("./User");
-const TechBlog = require("./TechBlog");
+const User = require("./User");
+const TechBlog = require("./Comment");
 
-TechBlog.belongsTo(User,{
-    onDelete:"CASCADE"
+TechBlog.belongsTo(User, {
+    onDelete: "CASCADE"
 })
 User.hasMany(TechBlog)
 
