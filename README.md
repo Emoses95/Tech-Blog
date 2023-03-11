@@ -1,5 +1,13 @@
 # Tech-Blog
 
+## Description
+
+Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
+
+This is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. The site is completely from scratch and deploy to Heroku. The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+
+## Usage
+
 GIVEN Tech Blog
 WHEN a user visits the site for the first time
 THEN a user is presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
@@ -33,3 +41,7 @@ WHEN a user clicks on the logout option in the navigation
 THEN a user signs out of the site
 WHEN a user is idle on the site for more than a set time
 THEN a user is able to view comments but a user is prompted to log in again before a user is add, update, or delete comments
+
+## Deployed link
+
+https://techblog9.herokuapp.com/login
