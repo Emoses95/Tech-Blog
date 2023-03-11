@@ -1,11 +1,11 @@
 document.querySelector('#signUpForm').addEventListener('submit', e => {
     e.preventDefault();
     const signUpObj = {
-        signUpForm: document.querySelector('#signUpForm').ariaValueMax,
-        signUpPassword: document.querySelector('#signUpPassword').value
+        username: document.querySelector('#signupUsername').value,
+        password: document.querySelector('#signupPassword').value
     }
     console.log(signUpObj)
-    fetch('/api/users/password', {
+    fetch('/api/users/', {
         method: 'POST',
         body: JSON.stringify(signUpObj),
         headers: {
