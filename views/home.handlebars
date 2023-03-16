@@ -1,11 +1,113 @@
-<h1>Homepage</h1>
-<h2>The Tech Blog</h2>
+{{!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>The Tech Blog - Homepage</title>
+	<style>
+		
+		.comment-box {
+			width: 50%;
+			margin-top: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		
+		.comment-box h2 {
+			font-size: 18px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.comment-box p {
+			font-size: 14px;
+			margin: 0;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>The Tech Blog</h1>
+	<h2>Homepage</h2>
+
+	{{#each allComments}}
+	<section class="comment-box">
+	    <h2>{{User.username}} commented</h2>
+	    <p>text: {{comment}}</p>
+	</section>
+	{{/each}}
+	
+	<div style="display: flex; justify-content: center; margin-top: 50px;">
+		<form>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<br>
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html> --}}
 
 
-{{#each allComments}}
-<section class="comment-box">
-    <h2>{{User.username}} commented</h2>
-    <p>  text: {{comment}}</p>
-</section>
-{{/each}}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Homepage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center mb-5">Welcome to My Homepage</h1>
+		<div class="row">
+			<title>The Tech Blog - Homepage</title>
+	<style>
+		
+		.comment-box {
+			width: 50%;
+			margin-top: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		
+		.comment-box h2 {
+			font-size: 18px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.comment-box p {
+			font-size: 14px;
+			margin: 0;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	{{#each allComments}}
+	<section class="comment-box">
+	    <h2>{{User.username}} commented</h2>
+	    <p>text: {{comment}}</p>
+	</section>
+	{{/each}}
+	
+	<div style="display: flex; justify-content: center; margin-top: 50px;">
+		<form>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<br>
+			<label for="comment">Comment:</label>
+			<textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+		</div>
+	</div>
 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfR

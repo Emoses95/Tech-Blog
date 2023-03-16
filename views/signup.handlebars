@@ -1,10 +1,29 @@
-<h1>Signup</h1>
-<br>
-<form id="signupForm">
-    <input type="text" id="signupUsername" placeholder="username">
-    <input type="password" id="signupPassword" placeholder="password">
-    <br>
-    <button>Signup</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center mb-5">Signup</h1>
+		<form id="signupForm">
+			<div class="form-group">
+				<label for="signupUsername">Username</label>
+				<input type="text" class="form-control" id="signupUsername" placeholder="Enter username">
+			</div>
+			<div class="form-group">
+				<label for="signupPassword">Password</label>
+				<input type="password" class="form-control" id="signupPassword" placeholder="Enter password">
+			</div>
+			<button type="submit" class="btn btn-primary">Signup</button>
+		</form>
+	</div>
 
-<script src="/js/signup.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="/js/signup.js"></script>
+</body>
+</html>

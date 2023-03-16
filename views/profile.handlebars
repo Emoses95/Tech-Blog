@@ -1,20 +1,42 @@
-<h1>Welcome back, {{username}}!</h1>
-<br>
-<h2>Add a Comment</h2>
-<br>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Profile Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center mb-5">My Profile</h1>
+        <h1>Welcome back, {{username}}!</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<section>
+        <h2>Add a Comment</h2>
 
-<form id="new-comment-form">
-    <textarea id="comment-input"></textarea>
-    <button>blog</button>
-</form>
-<br>
+        <form id="new-comment-form">
+          <label for="comment-input">Your comment:</label>
+          <textarea id="comment-input"></textarea>
+          <button type="submit">Post</button>
+        </form>
+      </section>
 
-<h2>My Comments:</h2>
-{{#each Comments}}
-    <section class="comment-box">
-    <p>  text: {{comment}}</p>
-</section>
-<br>
-{{/each}}
+      <section>
+        <h2>My Comments:</h2>
 
-<script src="/js/profile.js"></script>
+        {{#each Comments}}
+        <article class="comment">
+          <p>{{comment}}</p>
+        </article>
+        {{/each}}
+      </section>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="/js/profile.js"></script>
+</body>
+</html>
