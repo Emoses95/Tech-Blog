@@ -70,6 +70,18 @@ router.post("/login", (req, res) => {
     })
 })
 
+// User logout 
+router.post("/logout", (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send("An error occurred while logging out.");
+        }
+        res.clearCookie("sid");
+        res.status(200).send("Logout successful.");
+    });
+});
+
 
 
 
